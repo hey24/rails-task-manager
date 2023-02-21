@@ -1,10 +1,14 @@
-<h1><%= @task.title %></h1>
-<p>Details: <%= @task.details %></p>
-<p>Completed: <%= @task.completed %></p>
+<div class="container m-3">
+  <h1><%= @task.title %></h1>
+  <p>Details: <%= @task.details %></p>
+  <p>Completed: <%= @task.completed %></p>
 
-<%=
-  link_to 'Delete', task_path(@task),
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-%>
+  <%= link_to "Edit task", edit_task_path %>
 
-<%= link_to 'Back to tasks', tasks_path %>
+  <%=
+    link_to 'Delete', task_path(@task),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+  %>
+
+  <%= link_to 'Back to tasks', tasks_path %>
+</div>
